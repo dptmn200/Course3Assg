@@ -1,13 +1,15 @@
 
 ########## Part 1 - Merges the training and the test sets to create one data set - Start ##########
 
+## Please update the "Location" before running the code
+
         ## Test data sets - Start ##
         
                 # Extract Test datasets
-                X_test <- read.table("C:/Location/UCI HAR Dataset/test/X_test.txt")
-                Y_test <- read.table("C:/Location/UCI HAR Dataset/test/Y_test.txt")
-                subject_test <- read.table("C:/Location/UCI HAR Dataset/test/subject_test.txt")
-                features <- read.table("C:/Location/UCI HAR Dataset/features.txt")
+                X_test <- read.table("Location/test/X_test.txt")
+                Y_test <- read.table("Location/test/Y_test.txt")
+                subject_test <- read.table("Location/test/subject_test.txt")
+                features <- read.table("Location/features.txt")
                 
                 # Check imported files
                 head(X_test,1)
@@ -46,10 +48,10 @@
         ## Train data sets - Start ##
         
                 # Extract Test datasets
-                X_train <- read.table("C:/Location/UCI HAR Dataset/train/X_train.txt")
-                Y_train <- read.table("C:/Location/UCI HAR Dataset/train/Y_train.txt")
-                subject_train <- read.table("C:/Location/UCI HAR Dataset/train/subject_train.txt")
-                ##features <- read.table("C:/Location/UCI HAR Dataset/features.txt")
+                X_train <- read.table("Location/train/X_train.txt")
+                Y_train <- read.table("Location/train/Y_train.txt")
+                subject_train <- read.table("Location/train/subject_train.txt")
+                ##features <- read.table("Location/features.txt")
                 
                 # Check imported files
                 head(X_train,1)
@@ -133,7 +135,7 @@
 
 
         # Import activity name file
-        activity <- read.table("C:/Location/UCI HAR Dataset/activity_labels.txt")
+        activity <- read.table("Location/activity_labels.txt")
         
         # Label columns
         names(activity)[1]<-"type"
@@ -180,7 +182,7 @@
         check_av <- sapply(split_data,function(x) colMeans(x[col_name],na.rm=TRUE))
         
         
-        write.table(check_av, "C:/Location/UCI HAR Dataset/final_tidy_data.txt", sep="\t")
+        write.table(check_av, "Location/final_tidy_data.txt", sep="\t")
         
         
         # Check output sample
